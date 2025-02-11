@@ -1,4 +1,4 @@
 # Car-Price-Prediction-Webpage
 
-![Car Webpage image]([[https://github.com/user-attachments/assets/fd9001a7-20a4-47d8-a704-3c55af3efc70](https://github.com/Arjunyadav170/Car-Price-Prediction-Webpage/blob/main/Project_car_image.jpg?raw=true)])
+![Car Webpage image]((https://github.com/Arjunyadav170/Car-Price-Prediction-Webpage/blob/56d3184df96fc2f0389e472bee6885eeee16a6fe/Project_car_image.jpg))
 
