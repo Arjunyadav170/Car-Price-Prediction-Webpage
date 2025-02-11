@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Required_car</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body class="bg-nav">
+    <nav class="navbar ">
+        <a href=" " class="navbar-brand text-light" >Expense App</a>
+    </nav>
+    <div class="container">
+       <div class="row">
+         <div class="col-md-8">
+           <h1 class="text-light display 4 mt-100" style="font-size:80px">welcome Back in AI era </h1>
+           <h2 class="text-purple display 4 mt-100" >Now we predict second-hand car price with AI</h2>
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuE5R7aq0HfJuOmdQwpvKWBc_vBrx_K-IBTg&s" alt="Your Dream Car" width="600" height="400">
+           <img src="https://media.istockphoto.com/id/1203709243/photo/this-car-is-perfect-for-us.jpg?s=612x612&w=0&k=20&c=If9_C1HIUHKlMiT2U5Byj5SWtO5e3DFzYFm030hc8hs=" alt="This is family car" width="600" height="400">
+
+         </div>
+         <div class="col-md-4">
+           <div class="card mt-100">
+             <div class="card-body">
+               <h3 class="text-md-center">Enter Our Favourite Car Details </h3>
+                <form class="form" method="post" action="/predict" accept-charset="utf-8">
+                  <label> Select Company Name </label><br>
+                  <select class="selectpicker form-control" name="Manufacturer" id="Manufacturer" required="1">
+                    {% for Manufacturer in Manufacturer_companies %}
+                    <option value="{{Manufacturer}}" > {{Manufacturer}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+
+                  <label>Select Car category</label><br>
+                  <select class="selectpickle form-control" name="Category" id="Category" required="1">
+                    {% for category in Car_categories  %}
+                    <option value="{{category }}" > {{category }} </option>
+                    {% endfor %}
+                  </select><br>
+
+                  <label>How many kilometers travel car till now</label><br>
+                  <input type="number" class="form-control" name="Mileage"><br><br>
+                  <label>Select car lounch Year model</label><br>
+                  <select class="selectpickle form-control" name="Prod. year" id="Prod. year" required="1">
+                   {% for year in model_in_year %}
+                    <option value="{{year}}" > {{year}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+                  <label>Select Fuel engine type</label><br>
+                  <select class="selectpickle form-control" name="Fuel type" id="Fuel type" required="1">
+                    {% for Fuel_type in fuel_engine_type %}
+                    <option value="{{Fuel_type}}" > {{Fuel_type}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+                  <label>Engine size in CC</label><br>
+                  <input type="number" class="form-control" name="Engine volume"><br><br>
+                  <label>Engine volume with Turbo</label><br>
+                  <select class="selectpickle form-control" name="Turbo" id="Turbo" required>
+                    <option value="1">Turbo</option>
+                    <option value="0">No Turbo</option>
+                  </select><br>
+
+
+                  <label> Number of Cylinders</label><br>
+                  <input type="number" class="form-control" name="Cylinders"><br><br>
+                  <label>Select Gear box type</label><br>
+                  <select class="selectpickle form-control" name="Gear box type" id="Gear box type" required="1">
+                   {% for Gear_box_type in car_gear_type %}
+                    <option value="{{Gear_box_type}}" > {{Gear_box_type}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+                  <label> number of Airbags</label><br>
+                  <input type="number" class="form-control" name="Airbags"><br><br>
+                  <label>Select Car color </label><br>
+                  <select class="selectpickle form-control" name="Color" id="Color" required="1">
+                   {% for color in Car_color %}
+                    <option value="{{color}}" > {{color}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+                  <label>Select Drive wheels </label><br>
+                  <select class="selectpickle form-control" name="Drive wheels" id="Drive wheels" required="1">
+                    {% for drive_wheel in Car_drive_wheels %}
+                    <option value="{{drive_wheel}}" > {{drive_wheel}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+                  <label> Select Wheel_type </label><br>
+                  <select class="selectpickle form-control" name="Wheel" id="Wheel" required>
+                    <option value="1">Left Wheel</option>
+                    <option value="0">Right Wheel</option>
+
+                  </select><br>
+
+
+                  <label>Select Doors </label><br>
+                  <select class="selectpickle form-control" name="Doors" id="Doors" required="1">
+                    {% for Doors in  Car_doors %}
+                    <option value="{{Doors}}" > {{Doors}} </option>
+                    {% endfor %}
+                  </select><br>
+
+
+                  <label>tex_price </label><br>
+                  <input type="number" class="form-control" name="Levy" placeholder="In tex_price You Can Choose 0 "><br><br>
+                  <h3 class="text-md-center">Before Click Prediction Botton Make Sure You Fill All Details Elsewhere You Face Error  </h3>
+                <div class="col-md-10 form-group" style="text-align: center">
+                  <button  class="btn btn-primary form-control" onclick="send_data()">Predict Price</button>
+                </div>
+
+                </form>
+                <br>
+               <div class="row">
+                 <div class="col-12" style="text-align: center">
+                   <h3><span id="Prediction">  </span></h3>
+                 </div>
+               </div>
+
+             </div>
+           </div>
+
+         </div>
+
+         </div>
+       </div>
+
+    <script>
+
+    function form_handler(event) {
+        event.preventDefault(); // Don't submit the form normally
+    }
+    function send_data()
+    {
+        document.querySelector('form').addEventListener("submit",form_handler);
+
+        var fd=new FormData(document.querySelector('form'));
+
+        var xhr= new XMLHttpRequest({mozSystem: true});
+
+        xhr.open('POST','/predict',true);
+        document.getElementById('Prediction').innerHTML="Wait! Predicting Price.....";
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == XMLHttpRequest.DONE){
+                document.getElementById('Prediction').innerHTML="Prediction: $"+xhr.responseText;
+
+            }
+        };
+
+        xhr.onload= function(){};
+
+        xhr.send(fd);
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
