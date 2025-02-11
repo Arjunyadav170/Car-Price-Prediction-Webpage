@@ -1,4 +1,4 @@
 # Car-Price-Prediction-Webpage
 
-<img src="C:\Users\vikas\Downloads\movies\Project_car_image.jpg" alt="Car Image" width="500">
+<img src="(https://github.com/Arjunyadav170/Car-Price-Prediction-Webpage?tab=readme-ov-file)" alt="Car Image" width="500">
 
