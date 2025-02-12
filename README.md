@@ -25,4 +25,4 @@ Drive wheels,	Doors,	Wheel,	Color.
 3.Run the application, fill in all the details of your favorite car, and click the Prediction button to get the estimated price of the second-hand car.<br>
 
 ## Model predication Demo
--<a href ="https://www.kaggle.com/datasets/deepcontractor/car-price-prediction-challenge" >Kaggle Dataset link </a><br>
+![Car Webpage image](https://github.com/Arjunyadav170/Car-Price-Prediction-Webpage/blob/main/Car_prediction_demo.jpg?raw=true)
