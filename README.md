@@ -23,3 +23,8 @@ Drive wheels,	Doors,	Wheel,	Color.
 
 *View dataset
  -<a href ="https://github.com/Arjunyadav170/Car-Price-Prediction-Webpage/blob/main/car_price_prediction.csv" > Dataset </a>
+
+## How to Run the Project on Your PC
+1.Download the important files to your PC, such as train_model.py, app.py, home.html, and style.css.
+2.Install the required Python libraries mentioned in train_model.py for training the model.
+3.Run the application, fill in all the details of your favorite car, and click the Prediction button to get the estimated price of the second-hand car.
