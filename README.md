@@ -27,8 +27,20 @@ Drive wheels,	Doors,	Wheel,	Color.
 ## Model predication Demo
 ![Car Webpage image](https://github.com/Arjunyadav170/Car-Price-Prediction-Webpage/blob/main/Car_prediction_demo.jpg?raw=true)
 
+
+## Tech Stack Used
+1.Frontend: JavaScript<br> 
+2.Backend: Flask<br> 
+3.Machine Learning Algorithm: Decision Tree<br> 
+
+## Main Challenge of This Project
+->The primary challenge in the Car Price Prediction webpage is handling a dataset with numerous categorical columns. Converting these categories into numerical values using one-hot encoding while maintaining high accuracy is a significant challenge.
+
 ## Real-Life Use Cases of This Project
 1.Helps Buyers Make Informed Decisions 🧠<br> 
 2.Enhances Negotiation Power  Predicted Prices as a Benchmark ✍<br> 
 3.Saves Time and Effort Because Buyers Already Sure about Car and there Price 💰<br> 
 4. Prevents Fraud and Overpricing<br> 
+
+
+    
