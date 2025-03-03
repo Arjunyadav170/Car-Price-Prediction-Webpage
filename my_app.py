@@ -12,7 +12,7 @@ with open('models.pkl', 'rb') as f:
 with open('pipeline.pkl', 'rb') as f:
     full_pipeline = pickle.load(f)
 @app.route('/',methods=['GET','POST'])
-def home():
+def index():
     Manufacturer_companies=sorted(df['Manufacturer'].unique())
     Car_categories=sorted(df['Category'].unique())
     model_in_year=sorted(df['Prod. year'].unique())
@@ -24,7 +24,7 @@ def home():
     Car_control_wheel=sorted(df['Wheel'].unique())
     Car_doors=sorted(df['Doors'].unique())
 
-    return render_template('home.html' , Manufacturer_companies=Manufacturer_companies ,Car_categories=Car_categories ,model_in_year=model_in_year,fuel_engine_type=fuel_engine_type,car_gear_type=car_gear_type,
+    return render_template('index.html' , Manufacturer_companies=Manufacturer_companies ,Car_categories=Car_categories ,model_in_year=model_in_year,fuel_engine_type=fuel_engine_type,car_gear_type=car_gear_type,
                            Car_color=Car_color,Car_drive_wheels=Car_drive_wheels,Car_control_wheel=Car_control_wheel, Car_doors= Car_doors )
 @app.route('/predict' , methods=['POST'])
 @cross_origin()
